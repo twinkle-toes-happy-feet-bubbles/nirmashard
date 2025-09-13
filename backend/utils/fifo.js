@@ -1,4 +1,4 @@
-module.exports = function computeFIFO(txs, pricesMap) {
+function computeFIFO(txs, pricesMap) {
     const lots = [];
     const gains = [];
     let net = 0;
@@ -28,4 +28,6 @@ module.exports = function computeFIFO(txs, pricesMap) {
       }
     }
     return { gains, netGain: net, tax: Math.max(0, net * 0.3) };
-  };
+  }
+  
+  module.exports = computeFIFO;
